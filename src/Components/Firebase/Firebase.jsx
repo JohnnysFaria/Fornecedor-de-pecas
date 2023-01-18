@@ -33,7 +33,7 @@ const Firebase = () => {
           return (
             <div>
               <li key={shop.id}>
-                {shop.metal.name}
+                {shop.Bronze.name}
               </li>
             </div>
           )

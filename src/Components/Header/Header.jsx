@@ -9,7 +9,7 @@ const Header = () => {
        <img src={Logo} alt="Logo Fornecedor de auto pecas" />
        
        <div>
-        <a href="#">Contato</a>
+        <a href="#google">Contato</a>
        </div>
     </div> 
     </header>
