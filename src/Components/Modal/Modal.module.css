@@ -1,0 +1,31 @@
+.modal {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    z-index: 300;
+  }
+
+  .infoModal {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .infoModal input {
+    width: 350px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+  }
+
+.infoModal button {
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
