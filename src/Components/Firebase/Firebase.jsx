@@ -9,35 +9,56 @@ const firebaseApp = initializeApp({
 });
 
 const Firebase = () => {
-  // const [name, setName] = useState("")
-  // const [email, setEmail] = useState("")
   const [shops, setShops] = useState([])
+  // console.log(shops)
 
     const db = getFirestore(firebaseApp)
     const shopsCollectionRef = collection(db, "Shops")
-
 
     useEffect(() => {
         const getShops = async () => {
             const data = await getDocs(shopsCollectionRef)
             setShops(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
-            console.log(data.docs)
         }
         getShops();
-    }, [])
+    }, [db])
 
-  return (
-    <div>
+    // function lojas(s) {
+    //   shops.map(s => {
+    //     const shop = Object.values(s)
+    //     shop.map(l => {
+    //       console.log(l)
+    //       return (
+    //         <div>
+    //           <ul>
+    //             <li>{l.name}</li>
+    //           </ul>
+    //         </div>
+    //       )
+    //     })
+    //    })
+    //   }
+    // lojas()
+    // console.log(lojas)
+
+
+    return (
+      <div>
       <ul>
-        {shops.map(shop => {
-          return (
-            <div>
-              <li key={shop.id}>
-                {shop.Bronze.name}
-              </li>
-            </div>
-          )
-        })}
+        {shops.map(s => {
+          const shop = Object.values(s)
+          console.log(shop)
+            return (
+              <div>
+                <li key={s.id}>
+                  {shop[0].nome}
+                  {shop[1].nome}
+                </li>
+              </div>
+            )
+          })
+          }
+        
       </ul>
     </div>
   )
