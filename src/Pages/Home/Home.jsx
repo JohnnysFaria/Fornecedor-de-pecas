@@ -11,14 +11,11 @@ const Home = () => {
   const [modal, setModal] = React.useState(true)
   // const [shop, setShop] = React.useState(null)
 
-  
-
-  
   return (
     <>
       <Modal modal={modal} setModal={setModal} />
       <Header />
-        {/* <Card name={} /> */}
+        <Card />
       <Firebase/>
       <div className={style.a}>
       <div className={style.search}>
