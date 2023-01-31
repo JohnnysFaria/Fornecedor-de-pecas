@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import {initializeApp} from "firebase/app"
 import {collection, getDocs, getFirestore} from "firebase/firestore"
+import Card from '../Card/Card';
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyAHT5ARX5lTPKmQHWBeqaWlQINkS4s7Y8A",
@@ -41,26 +42,37 @@ const Firebase = () => {
     // lojas()
     // console.log(lojas)
 
+    function teste(nome) {
+      shops.map(s => {
+        const shop = Object.values(s)
+          return (
+            <div>
+              <li key={s.id}>
+                {shop[0].nome}
+                {shop[1].nome}
+              </li>
+            </div>
+          )
+        })
+        teste()
 
+
+    }
+    
+    
     return (
+      <>
+      
       <div>
       <ul>
-        {shops.map(s => {
-          const shop = Object.values(s)
-          console.log(shop)
-            return (
-              <div>
-                <li key={s.id}>
-                  {shop[0].nome}
-                  {shop[1].nome}
-                </li>
-              </div>
-            )
-          })
-          }
+        {shops && shops.map(cards => {
+          <Card/>
+          
+        })}
         
       </ul>
     </div>
+      </>
   )
 }
 

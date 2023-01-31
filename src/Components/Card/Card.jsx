@@ -2,10 +2,13 @@ import React from 'react'
 import style from './Card.module.css'
 
 
-const Card = () => {
+const Card = (props) => {
+
+
   return (
+
     <div className={style.card}>
-            <p>texto</p>
+            <p>{props.nome}</p>
             <p>aqui sera o endereco</p>
           </div>
   )
